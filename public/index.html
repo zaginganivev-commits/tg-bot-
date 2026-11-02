@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shaxsiy AI Yordamchi</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="bot-info">
+        <div class="avatar-container">
+          <div class="avatar">🤖</div>
+          <span class="status-indicator"></span>
+        </div>
+        <div class="bot-details">
+          <h1>Shaxsiy AI</h1>
+          <p class="status-text">Har qanday savolga javob beradi</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="clearChatBtn" class="action-btn" title="Suhbatni tozalash">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18"></path>
+            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+          </svg>
+          <span class="btn-text">Tozalash</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Chat Messages Container -->
+    <main class="chat-main" id="chatContainer">
+      <div class="welcome-card" id="welcomeCard">
+        <div class="welcome-icon">✨</div>
+        <h2>Assalomu alaykum!</h2>
+        <p>Men sizning shaxsiy AI yordamchingizman. Dasturlash, fan, tillar, biznes yoki kundalik hayotdagi barcha savollaringizga yordam beraman.</p>
+        
+        <div class="suggestions-label">Tavsiya etilgan savollar:</div>
+        <div class="suggestion-chips">
+          <button class="chip" data-question="Frontend va Backend arxitekturasini qanday qilib to'g'ri loyihalash kerak?">
+            💻 Fullstack arxitektura
+          </button>
+          <button class="chip" data-question="JavaScriptda Event Loop qanday ishlaydi? Misollar bilan tushuntir.">
+            ⚡ JS Event Loop
+          </button>
+          <button class="chip" data-question="Ingliz tilida so'zlashish ko'nikmasini oshirish uchun eng samarali usullar qaysilar?">
+            🗣 Ingliz tili
+          </button>
+          <button class="chip" data-question="Yangi biznes g'oya uchun MVP qanday ishlab chiqiladi?">
+            💡 Startup & MVP
+          </button>
+        </div>
+      </div>
+
+      <div id="messagesList" class="messages-list"></div>
+
+      <!-- Typing Indicator -->
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <span>AI javob tayyorlamoqda...</span>
+      </div>
+    </main>
+
+    <!-- Input Footer -->
+    <footer class="app-footer">
+      <form id="chatForm" class="input-form">
+        <textarea 
+          id="messageInput" 
+          placeholder="Savolingizni yozing..." 
+          rows="1" 
+          autocomplete="off"
+          required
+        ></textarea>
+        <button type="submit" id="sendBtn" class="send-btn" title="Yuborish" aria-label="Yuborish">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+      <div class="footer-note">Google Gemini AI texnologiyasi bilan ishlaydi</div>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
